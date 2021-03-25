@@ -29,7 +29,7 @@ export class ClientesFormComponent implements OnInit {
       window.location.reload();
     }
     this.cliente = new Cliente();
-    this.route.navigate(['/clientes-form'])
+    this.route.navigate(['/clientes/form'])
   }
 
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class ClientesFormComponent implements OnInit {
   }
 
   voltarParaListagem() {
-    this.route.navigate(['/clientes-lista'])
+    this.route.navigate(['/clientes/lista'])
   }
 
   limpar() {
