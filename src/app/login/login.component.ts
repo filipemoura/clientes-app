@@ -31,7 +31,14 @@ export class LoginComponent {
   }
 
   cancelaCadastro() {
+    this.limparUsuario();
+  }
+
+  limparUsuario() {
     this.cadastrando = false;
+    this.username = '';
+    this.password = '';
+    this.errors = [];
   }
 
   cadastrar() {
@@ -43,10 +50,7 @@ export class LoginComponent {
         .subscribe(
           response => {
             this.mensagemSucesso = "Cadastro realizado com sucesso! Efetue o login."
-            this.cadastrando = false;
-            this.username = '';
-            this.password = '';
-            this.errors = [];
+            this.limparUsuario();
         }, errorResponse => {
           this.mensagemSucesso = "";
           this.errors = errorResponse.error.errors;
